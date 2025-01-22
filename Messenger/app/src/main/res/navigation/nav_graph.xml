@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/EnterRoomMainFragment">
+
+    <fragment
+        android:id="@+id/EnterRoomMainFragment"
+        android:name="com.example.messenger.EnterRoomMainFragment"
+        android:label="@string/enter_room_main_fragment_label"
+        tools:layout="@layout/fragment_main_enter_room">
+
+        <action
+            android:id="@+id/action_EnterRoomMainFragment_to_CreateRoomMainFragment"
+            app:destination="@id/CreateRoomMainFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/CreateRoomMainFragment"
+        android:name="com.example.messenger.CreateRoomMainFragment"
+        android:label="@string/create_room_main_fragment_label"
+        tools:layout="@layout/fragment_main_create_room">
+
+        <action
+            android:id="@+id/action_CreateRoomMainFragment_to_EnterRoomMainFragment"
+            app:destination="@id/EnterRoomMainFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_CreateRoomMainFragment_to_CreateRoomUsernameMainFragment"
+            app:destination="@id/CreateRoomUsernameMainFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/CreateRoomUsernameMainFragment"
+        android:name="com.example.messenger.CreateRoomUsernameMainFragment"
+        android:label="@string/create_room_username_main_fragment_label"
+        tools:layout="@layout/fragment_main_create_room_username">
+        <argument
+            android:name="room"
+            android:defaultValue="-1"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_CreateRoomUsernameMainFragment_to_CreateRoomMainFragment"
+            app:destination="@id/CreateRoomMainFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right" />
+    </fragment>
+</navigation>

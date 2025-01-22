@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<selector
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_enabled="false">
+        <shape>
+            <corners android:radius="20dp" />
+            <solid android:color="@color/ocean_palette_5" />
+        </shape>
+    </item>
+
+    <!-- State Pressed-->
+    <item android:state_pressed="true">
+        <shape>
+            <corners android:radius="20dp" />
+            <solid android:color="@color/menu_button_pressed" />
+        </shape>
+    </item>
+
+    <!-- State Enabled -->
+    <item android:state_enabled="true">
+        <shape>
+            <corners android:radius="20dp" />
+            <solid android:color="@color/ocean_palette_2" />
+        </shape>
+    </item>
+
+</selector>

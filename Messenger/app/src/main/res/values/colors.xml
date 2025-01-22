@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_100">#FF03DAC5</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="colorTextBlack">#333333</color>
+    <color name="colorTextHint">#e1e1e1</color>
+
+    <color name="menu_button_pressed">#022e36</color>
+    <color name="ocean_palette_1">#012d4a</color>
+    <color name="ocean_palette_2">#014753</color>
+    <color name="ocean_palette_3">#016392</color>
+    <color name="ocean_palette_4">#01839d</color>
+    <color name="ocean_palette_5">#aacfe2</color>
+</resources>

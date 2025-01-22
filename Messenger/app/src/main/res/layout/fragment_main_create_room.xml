@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/toolbar_createroom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:theme="@style/Theme.Messenger.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_createroom"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/ocean_palette_2"
+            app:contentInsetLeft="8dp"
+            app:contentInsetStart="8dp"
+            app:popupTheme="@style/Theme.Messenger.PopupOverlay">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button_back"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/back_menu_button"
+                style="?android:attr/borderlessButtonStyle"/>
+
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/create_room_next_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_createroom_layout">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_main_activity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/input_new_room"
+            android:textSize="20dp"
+            android:fontFamily="serif"
+            android:textColor="@color/ocean_palette_1"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toTopOf="@id/create_room_random_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/create_room_random_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/random"
+            android:src="@drawable/random"
+            app:layout_constraintTop_toBottomOf="@id/create_room_nr_input"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/create_room_nr_input"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textAlignment="center"
+            android:textColor="@color/ocean_palette_1"
+            android:background="@drawable/input_border_drawable"
+            android:textCursorDrawable="@drawable/cursor_drawable"
+            android:textSize="32dp"
+            android:maxLength="3"
+            android:inputType="number"
+            app:layout_constraintTop_toBottomOf="@id/text_main_activity"
+            app:layout_constraintBottom_toTopOf="@id/create_room_random_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/create_room_next_button"
+        android:layout_width="100dp"
+        android:layout_height="@dimen/button_height"
+        android:text="@string/next"
+        android:theme="@style/paletteButton3"
+        android:background="@drawable/button_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_createroom_layout"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/username_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        android:fontFamily="serif"
+        android:layout_marginTop="90dp"
+        android:textColor="@drawable/text_copyable"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/create_room_next_button" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

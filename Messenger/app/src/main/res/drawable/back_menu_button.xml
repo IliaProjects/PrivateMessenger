@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/button_back_background"
+        android:gravity="center">
+
+    </item>
+    <item
+        android:drawable="@drawable/back_menu_image"
+        android:bottom="10dp"
+        android:top="10dp"
+        android:left="9dp"
+        android:right="9dp">
+    </item>
+</layer-list>

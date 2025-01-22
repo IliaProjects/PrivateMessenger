@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/bg_login_button_background"
+        android:gravity="center">
+
+    </item>
+    <item
+        android:drawable="@drawable/login"
+        android:bottom="9dp"
+        android:top="9dp"
+        android:left="8dp"
+        android:right="6dp">
+    </item>
+</layer-list>

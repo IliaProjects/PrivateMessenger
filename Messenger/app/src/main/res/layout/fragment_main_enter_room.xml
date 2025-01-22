@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateRoomMainFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/toolbar_enterroom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:theme="@style/Theme.Messenger.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_enterroom"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/ocean_palette_2"
+            app:contentInsetLeft="8dp"
+            app:contentInsetStart="8dp"
+            app:popupTheme="@style/Theme.Messenger.PopupOverlay" >
+
+            <RelativeLayout
+                android:id="@+id/button_logout"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="@drawable/button_logout_background">
+                <ImageView
+                    android:layout_centerVertical="true"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/logout_image"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:text="Выход"
+                    android:textColor="@color/ocean_palette_5"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="sans-serif-condensed"/>
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_enterroom_layout"
+        app:layout_constraintBottom_toTopOf="@id/create_new_room_button">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_main_activity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/input_existing_room"
+            android:textSize="20dp"
+            android:fontFamily="serif"
+            android:textColor="@color/ocean_palette_1"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toTopOf="@id/enter_room_input"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/enter_room_input"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/ocean_palette_1"
+            android:background="@drawable/input_border_drawable"
+            android:textCursorDrawable="@drawable/cursor_drawable"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_main_activity"
+            android:text=""
+            android:textAlignment="center"
+            android:textSize="32dp"
+            android:maxLength="3"
+            android:inputType="number" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/enter_existing_room_button"
+        android:layout_width="180dp"
+        android:layout_height="@dimen/button_height"
+        android:text="ВОЙТИ"
+        android:theme="@style/paletteButton3"
+        android:background="@drawable/button_background"
+        android:layout_marginBottom="6dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/create_new_room_button" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/create_new_room_button"
+        android:layout_width="180dp"
+        android:layout_height="@dimen/button_height"
+        android:theme="@style/paletteButton3"
+        android:background="@drawable/button_background"
+        android:text="Новая комната"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_enterroom_layout"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/text_user_main_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        android:fontFamily="serif"
+        android:layout_marginTop="90dp"
+        android:textColor="@drawable/text_copyable"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/create_new_room_button" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

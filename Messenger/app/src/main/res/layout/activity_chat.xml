@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/background_image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/toolbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentInsetStart="0dp"
+        android:contentInsetLeft="0dp"
+        android:theme="@style/Theme.Messenger.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/ocean_palette_2"
+            app:contentInsetLeft="8dp"
+            app:contentInsetStart="8dp"
+              app:popupTheme="@style/Theme.Messenger.PopupOverlay"
+            >
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button_back"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/back_button"
+                style="?android:attr/borderlessButtonStyle"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="23dp"
+                android:src="@drawable/nophoto"/>
+
+            <ImageView
+                android:id="@+id/status_indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/indicator_offline"/>
+            <TextView
+                android:id="@+id/company_username"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textColor="@color/ocean_palette_4"
+                android:layout_marginLeft="15dp"
+                android:textSize="20dp"
+                android:fontFamily="sans-serif-condensed"
+                android:text="Johnsmith" />
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
+        android:id="@+id/chat_messagesList_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar_layout"
+        android:layout_above="@id/message_editor">
+         <TextView
+             android:layout_alignParentRight="true"
+             android:id="@+id/room_nr_text"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="7dp"
+             android:layout_marginRight="15dp"
+             android:text="666"
+             android:fontFamily="serif"
+             android:textColor="@color/ocean_palette_5"
+             android:textSize="30dp"/>
+
+        <com.stfalcon.chatkit.messages.MessagesList
+            android:id="@+id/chat_messagesList_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            app:incomingBubblePaddingBottom="10dp"
+            app:incomingBubblePaddingTop="10dp"
+            app:incomingDefaultBubbleColor="@color/ocean_palette_5"
+            app:incomingDefaultBubblePressedColor="@color/ocean_palette_4"
+            app:incomingImageTimeTextColor="#90a4ae"
+            app:incomingTextColor="#000"
+            app:incomingTextLinkColor="#d7ccc8"
+            app:incomingTimeTextColor="#ede7f6"
+
+            app:outcomingBubblePaddingBottom="10dp"
+            app:outcomingBubblePaddingTop="10dp"
+            app:outcomingDefaultBubbleColor="@color/ocean_palette_4"
+            app:outcomingDefaultBubblePressedColor="@color/ocean_palette_3"
+            app:outcomingImageTimeTextColor="#90a4ae"
+            app:outcomingTextColor="#fff"
+            app:outcomingTextLinkColor="#d7ccc8"
+            app:outcomingTimeTextColor="#90a4ae"
+            app:textAutoLink="all" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/message_editor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="12dp"
+        android:background="@drawable/bg_white_rounded">
+
+        <ImageButton
+            android:id="@+id/bt_send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:padding="10dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/send_3"
+            android:gravity="center"
+            android:onClick="onBtnSendClick"
+            />
+
+        <ImageButton
+            android:id="@+id/bt_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/bt_attachment"
+            android:background="@android:color/transparent"
+            app:srcCompat="@drawable/outline_image_24"
+            android:onClick="onBtnImageClick"/>
+
+        <ImageButton
+            android:id="@+id/bt_attachment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="34dp"
+            android:layout_toLeftOf="@+id/bt_send"
+            android:background="@android:color/transparent"
+            android:padding="@dimen/space10"
+            app:srcCompat="@drawable/ic_attach_file_black_24dp"
+            android:onClick="onBtnAttachmentClick"/>
+
+        <EditText
+            android:id="@+id/et_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/bt_image"
+            android:background="@android:color/transparent"
+            android:hint="Message..."
+            android:maxLength="2048"
+            android:inputType="textAutoCorrect|textAutoComplete|textMultiLine|textCapSentences"
+            android:maxLines="3"
+            android:padding="@dimen/space15"
+            android:textColor="@color/colorTextBlack"
+            android:textColorHint="@color/colorTextHint"
+            android:textSize="@dimen/h3" />
+    </RelativeLayout>
+
+</RelativeLayout>

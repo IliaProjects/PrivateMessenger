@@ -1,0 +1,8 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:drawable="@drawable/login_image"
+        android:width="35dp"
+        android:height="37dp">
+    </item>
+</layer-list>
+
